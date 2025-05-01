@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<li>
+<h3>Resultados para "{{ query }}"</h3>
+
+{% if resultados %}
+  <div class="juegos">
+    {% for game in resultados %}
+      <div class="juego">
+        <h4>{{ game.title }}</h4>
+        <p>{{ game.description|truncatewords:25 }}</p>
+        <p><strong>Género:</strong> {{ game.genre }}</p>
+        {% if game.oferta %}
+        <p style="color: orange; font-weight: bold;">¡En oferta!<a href="{% url 'ofer' %}" class="btn-principal"> Ver</a></p>
+        <p><strong>Precio normal:</strong> ${{ game.price }}</p>
+        
+    {% else %}
+        <p><strong>Precio:</strong> ${{ game.price }}</p>
+    {% endif %}
+        {% if game.image %}
+        
+        <img src="{{ game.image.url }}" alt="{{ juego.title }}" width="150">
+          <center><iframe width="560" height="315" src="{{ game.video }}"
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No se encontraron juegos con ese término.</p>
+{% endif %}
+</li>
+{% endblock %}

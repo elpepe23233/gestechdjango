@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+    {% for game in games %}
+    
+      <div style="width: 300px;  padding: 15px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); text-align: center;">
+        <li>
+        <img src="{{ game.image.url }}" alt="{{ game.title }}" width="100%" style="border-radius: 5px;">
+        <h3>{{ game.title }}</h3>
+        <p><strong>Oferta:</strong> {{ game.oferta }}</p>
+        <p><strong>Precio normal:</strong> <s>${{ game.price }}</s></p>
+        <p><strong>Precio con oferta:</strong> ${{ game.precio_con_oferta }}</p>
+    </li>
+      </div>
+    
+    {% endfor %}
+   
+  </div>
+    
+{% endblock %}

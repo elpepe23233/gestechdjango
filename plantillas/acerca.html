@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<div class="custom-navbar titulo-principal"><center><h1>Somos Gestech.▲
+   
+          <h3>Bienvenido a Gestech</h3>
+          <p>Tu plataforma confiable para descubrir, comparar y disfrutar videojuegos de calidad. Explora títulos de todas las plataformas, conoce las últimas tendencias y encuentra tu próxima aventura gamer.</p>
+          <div class="botones">
+            <h3><a href="{% url 'listagam' %}" class="btn-principal">Explorar Catálogo</a>
+            <a href="#registro" class="btn-secundario">Únete a Gestech</a>
+            </h3>
+          </div>
+   
+      
+      <section id="sobre-nosotros">
+        <h3>¿A qué nos dedicamos?</h3>
+        <p>
+          En Gestech nos apasiona el mundo gamer. Somos un servicio digital creado para ofrecerte un catálogo organizado y actualizado de videojuegos, basado en reseñas, valoraciones y recomendaciones de la comunidad. Nuestra misión es que cada jugador, sin importar su nivel o plataforma, encuentre fácilmente juegos que realmente valgan la pena.
+        </p>
+        <p>
+          Navega por nuestro sitio y filtra títulos por género, plataforma, precio o popularidad. Accede a análisis detallados, noticias del sector y ofertas especiales. Además, te recomendamos juegos según tus gustos y lo que otros jugadores como tú están disfrutando ahora.
+        </p>
+        <p>
+          En Gestech, combinamos tecnología y comunidad para que disfrutes más tu tiempo de juego. Desde los clásicos de culto hasta los lanzamientos más recientes, aquí tienes todo lo que necesitas para elegir bien y jugar mejor.
+        </p>
+        <div class="botones">
+          <a href="#ultimos-lanzamientos" class="btn-principal">Ver Últimos Lanzamientos</a>
+          
+        </div>
+      </section>
+      
+    </center>
+    <div class="botones">
+<p>
+    Siguenos en nuestras redes:<a href="#paginaF" class="btn-terciario"> https://www.facebook.com/Gestech/?locale=es_LA </a>
+</p>
+</div>
+</div>
+
+
+{% endblock %}

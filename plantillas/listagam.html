@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<div class="custom-navbar titulo-principal">
+  <a class="navbar-brand">Buscar Videojuego:</a>
+  <form class="form-inline" method="get" action="{% url 'busqueda' %}">
+    <input class="form-control mr-sm-2" type="search"  name="q" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+{% for game in games %}
+
+<li>
+    <h1>{{ game.title }}</h1>
+      <div id="titulo1" > 
+      
+      <p>Descripción: {{ game.description }}</p>
+      </div> 
+      
+      <p>Género: {{ game.release_date }}</p>
+      <p>Plataforma: {{ game.genre }}</p>
+      {% if game.oferta %}
+      <p style="color: orange; font-weight: bold;">¡En oferta!<a href="{% url 'ofer' %}" class="btn-principal"> Ver</a></p>
+      <p><strong>Precio normal:</strong> ${{ game.price }}</p>
+      
+  {% else %}
+      <p><strong>Precio:</strong> ${{ game.price }}</p>
+  {% endif %}
+
+      <!--<p>{{game.image.url}}</p> PUEDES QUITAR ESTA WBD -->
+      <img src="{{ game.image.url }}" alt="{{ game.title }}" width="200" height="300">
+  
+ 
+    </li>
+{% endfor %}
+{% endblock %}

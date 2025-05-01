@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="custom-navbar titulo-principal">
+<center><h4>Más adquiridos:</h4></center>
+</div>
+{% for game in games %}
+<style type="text/css">
+
+</style>
+<div style="display: flex; align-items: center; margin-bottom: 30px;">
+<li>
+  <center><h1>{{ game.title }}</h1></center>
+    <div id="titulo1" > 
+    
+    <p>Descripción: {{ game.description }}</p>
+    </div> 
+    
+    <p>Género: {{ game.release_date }}</p>
+    <p>Plataforma: {{ game.genre }}</p>
+
+
+    <p>Precio: {{ game.price }}</p>
+    
+    <!--<p>{{game.image.url}}</p> PUEDES QUITAR ESTA WBD -->
+    <img src="{{ game.image.url }}" alt="{{ game.title }}" width="200" height="300">
+
+    <p>
+    
+    <iframe width="560" height="315" src="{{ game.video }}"
+  
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    
+
+    </p>
+  </li>
+  
+{% endfor %}
+
+{% endblock %}

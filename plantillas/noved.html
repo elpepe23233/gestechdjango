@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p style="background-color: rgb(97, 0, 136); color: rgb(0, 255, 13); text-align: center;"> Las mejores promociones.</p>
+{% for game in games %}
+<div style="display: flex; align-items: center; margin-bottom: 30px;">
+    
+<img src="{{ game.image.url }}" alt="{{ game.title }}" width="200" height="300 " style="margin-right: 20px;">
+
+<li>
+<div >
+    
+
+
+<p>
+    <h3>{{ game.title }}</h3><p>{{ game.novedades }}</p>
+</p>
+</div>
+</div>
+</li>
+
+
+
+
+{% endfor %}
+
+{% endblock %}
